@@ -1,0 +1,241 @@
+body{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #242831;
+}
+
+#heading{
+    width: 100%;
+}
+
+#contentOfInput {
+    width: 40%;
+    float: left;
+}
+
+#contentOfMid{
+    margin: 0;
+    padding: 0;
+    width: 5%;
+    float: left;
+}
+
+#contentOfOutput {
+    margin: 0;
+    padding: 0;
+    width: 55%;
+    float: right;
+}
+
+footer{
+    clear: both;
+    text-align: center;
+}
+
+#copyleft{
+    color: white;
+}
+#developerLink{
+    color: orange;
+    text-decoration:none;
+}
+#developerLink:hover{
+    color: yellow;
+}
+
+#heading img{
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+.titleStyle{
+    font-family:STXingkai,"Microsoft Yahei","MicrosoftJhengHei", STHeiti ,sans-serif;
+    color: white;
+    font-size: 40px;
+    display: block;
+    text-align: center;
+}
+
+.jingMaiBox {
+    margin-top: 7px;
+    margin-left: 30px;
+    display: block;
+}
+
+.checkboxAndSelect{
+    vertical-align: top;
+    width:38.5%;
+    display: inline-block;
+}
+
+.jingMaiBox input[type="checkbox"]{
+    visibility: hidden; /* 隐藏复选框按钮自带的样式 */
+}
+.jingMaiBox input[type="checkbox"] + label{
+    position: relative;  /* 相对定位 */
+    cursor: pointer;  /* 光标呈现为指示链接的指针（一只手） */
+}
+
+.jingMaiBox input+label::before{
+    content: '';
+    position: absolute;        /* 父元素为label，针对父元素进行绝对定位 */
+    left: -24px;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #999;
+    border-radius: 50%;        /*圆角边框*/
+}
+.jingMaiBox input:checked+label::before {
+    box-shadow: 0 0 6px #24b7e5;
+}
+.jingMaiBox input:checked+ label::after{
+    content: '';
+    position: absolute;    /*针对label进行绝对定位*/
+    left: -19px;
+    top: 5px;
+    border-radius: 50%;    /*设置圆角*/
+    width: 13px;
+    height: 13px;
+    background: red;
+}
+
+.jingMaiName{
+    width:75px;
+    display: inline-block;
+    color: orange;
+}
+.jingMaiName:hover{
+    color: yellow;
+}
+
+.zhengJingQizhen{
+    width: 13%;
+    color: orange;
+    display: inline-block;
+}
+
+.jingMaiBox input[type="text"]{
+    width: 5%;
+    display: inline-block;
+}
+.checkboxAndSelect input[type="text"]{
+    display: inline-block;
+    width: 12.98701298701299%;
+}
+
+#yinQiaoMaiYinBox{
+    margin-top: 20px;
+}
+.spaceOfAfterWeili{
+    width: 7%;
+    display: inline-block;
+}
+.WeiLi{
+    display: inline-block;
+    color: orange;
+}
+.qiJingFengJin{
+    display: inline-block;
+    color: orange;
+}
+.qiJingQiXue{
+    width: 13%;
+    display: inline-block;
+    color: orange;
+}
+
+button{
+    background: #eb94d0;
+    /* 创建渐变 */
+    background-image: -webkit-linear-gradient(top, #eb94d0, #2079b0);
+    background-image: -moz-linear-gradient(top, #eb94d0, #2079b0);
+    background-image: -ms-linear-gradient(top, #eb94d0, #2079b0);
+    background-image: -o-linear-gradient(top, #eb94d0, #2079b0);
+    background-image: linear-gradient(to bottom, #eb94d0, #2079b0);
+    /* 给按钮添加圆角 */
+    -webkit-border-radius: 28px;
+    -moz-border-radius: 28px;
+    border-radius: 28px;
+    /*添加阴影*/
+    text-shadow: 3px 2px 1px #9daef5;
+    -webkit-box-shadow: 6px 5px 24px #666666;
+    -moz-box-shadow: 6px 5px 24px #666666;
+    box-shadow: 6px 5px 24px #666666;
+
+    font-family: Arial sans-serif; /*规定元素的字体系列*/
+    color: #fafafa;
+    font-size: 25px;
+    text-decoration: none;  /*设置无文本装饰*/
+
+    padding: 0; /*内边距*/
+    margin-right: 2.5%;
+    margin-top: 15px;
+    margin-bottom: 20px;
+
+    width: 100px;
+    height: 40px;
+    border: none; /*去除边框*/
+    outline: none; /*outline（轮廓）是绘制于元素周围的一条线，位于边框边缘的外围，可起到突出元素的作用。*/
+    float: right;
+    display: inline-block;
+}
+
+/* button悬停样式 */
+button:hover {
+    background: #2079b0;
+    background-image: -webkit-linear-gradient(top, #2079b0, #eb94d0);
+    background-image: -moz-linear-gradient(top, #2079b0, #eb94d0);
+    background-image: -ms-linear-gradient(top, #2079b0, #eb94d0);
+    background-image: -o-linear-gradient(top, #2079b0, #eb94d0);
+    background-image: linear-gradient(to bottom, #2079b0, #eb94d0);
+    text-decoration: none;
+}
+
+#countTxt{
+    display: inline-block;
+    margin-top: 30px;
+    margin-left: 32px;
+    color: fuchsia;
+}
+
+#count{
+    margin-top: 30px;
+    color: fuchsia;
+}
+
+#hoverProp{
+    display: block;
+    color: white;
+    background-color: #999999;
+}
+
+#contentOfMid img{
+    margin-top: 280%;
+    width: 100%;
+}
+
+table {
+    margin-left: 10px;
+    margin-top: 7px;
+    border-collapse: collapse;
+}
+
+table,th,td{
+    border: 1px solid white;
+}
+
+td{
+    height: 35px;
+    color: white;
+}
+
+.propValue{
+    width: 40px;
+    color: mediumspringgreen;
+}
+
+.spaces{
+    width: 30px;
+}
