@@ -81,6 +81,7 @@ footer{
 .jingMaiBox input+label::before{
     content: '';
     position: absolute;        /* 父元素为label，针对父元素进行绝对定位 */
+    z-index: 1;
     left: -24px;
     width: 18px;
     height: 18px;
@@ -93,6 +94,7 @@ footer{
 .jingMaiBox input:checked+ label::after{
     content: '';
     position: absolute;    /*针对label进行绝对定位*/
+    z-index: 1;
     left: -19px;
     top: 5px;
     border-radius: 50%;    /*设置圆角*/
@@ -205,12 +207,6 @@ button:hover {
     color: fuchsia;
 }
 
-#hoverProp{
-    display: block;
-    color: white;
-    background-color: #999999;
-}
-
 #contentOfMid img{
     margin-top: 280%;
     width: 100%;
@@ -226,7 +222,7 @@ table,th,td{
     border: 1px solid white;
 }
 
-td{
+#contentOfOutput td{
     height: 35px;
     color: white;
 }
@@ -239,3 +235,30 @@ td{
 .spaces{
     width: 30px;
 }
+
+#hoverProp{
+    display: none;
+    position: absolute;
+    z-index: 2;
+    width: 15%;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+#hoverProp td{
+    height: 20px;
+    color: #fafafa;
+}
+#hoverTable{
+    margin-bottom: 10px;
+}
+#hoverPropJingMaiName{
+    display: block;
+    margin-top: 10px;
+    margin-left: 10px;
+    color: #9e9ec5;
+}
+#hoverPropJingMaiLevel{
+    display: block;
+    margin-left: 10px;
+    color: #2fdd33;
+}
+

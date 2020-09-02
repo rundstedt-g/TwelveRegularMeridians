@@ -11,14 +11,61 @@
     <div id="heading">
         <a href=""><img alt="经脉" src="../images/logo.png"></a>
     </div>
-    <div id="hoverProp">hello</div>
+    <div id="hoverProp">
+        <span id="hoverPropJingMaiName"></span>
+        <span id="hoverPropJingMaiLevel"></span>
+        <table id="hoverTable">
+            <tr>
+                <td class="hoverPropKey"></td>
+                <td class="hoverPropValue"></td>
+            </tr>
+            <tr>
+                <td class="hoverPropKey"></td>
+                <td class="hoverPropValue"></td>
+            </tr>
+            <tr>
+                <td class="hoverPropKey"></td>
+                <td class="hoverPropValue"></td>
+            </tr>
+            <tr>
+                <td class="hoverPropKey"></td>
+                <td class="hoverPropValue"></td>
+            </tr>
+            <tr>
+                <td class="hoverPropKey"></td>
+                <td class="hoverPropValue"></td>
+            </tr>
+            <tr>
+                <td class="hoverPropKey"></td>
+                <td class="hoverPropValue"></td>
+            </tr>
+            <tr>
+                <td class="hoverPropKey"></td>
+                <td class="hoverPropValue"></td>
+            </tr>
+            <tr>
+                <td class="hoverPropKey"></td>
+                <td class="hoverPropValue"></td>
+            </tr>
+            <tr>
+                <td class="hoverPropKey"></td>
+                <td class="hoverPropValue"></td>
+            </tr>
+            <tr>
+                <td class="hoverPropKey"></td>
+                <td class="hoverPropValue"></td>
+            </tr>
+
+
+        </table>
+    </div>
     <div id="contentOfInput">
         <span class="titleStyle">经脉选择</span>
         <div class="jingMaiBox">
             <div class="checkboxAndSelect">
-                <input id="kunLun" name="jingMai" onmouseover="mOver(this)" onmouseout="mOut(this)" type="checkbox" >
-                <label class="jingMaiName"  for="kunLun">正脉·昆仑</label>
-                <select>
+                <input id="kunLun" name="jingMai" type="checkbox" >
+                <label class="jingMaiName" for="kunLun" id="kunLunLabel"  onmouseout="mOut(this)" onmouseover="mOver(this)">正脉·昆仑</label>
+                <select id="kunLunSelect">
                     <option value ="216">216</option>
                     <option value ="180">180</option>
                 </select>
@@ -323,7 +370,7 @@
         <button onclick="myFunction()" type="button">确定</button>
     </div>
     <div id="contentOfMid">
-    <img src="../images/mid.png">
+    <img alt="图片加载失败" src="../images/mid.png">
     </div>
     <div id="contentOfOutput">
         <span class="titleStyle">附加属性</span>
@@ -452,14 +499,13 @@
                 <td class="propValue"></td>
             </tr>
         </table>
-
     </div>
 
     <footer>
         <span id="copyleft">Copyleft 2020 Maintained by</span>
         <a href="https://tieba.baidu.com/home/main?id=tb.1.ddff996a.awKMp5i3KpxvkrT86-BB6Q&fr=userbar" id="developerLink" target="_blank">拖延癌晚期</a>
     </footer>
-    <script src="../js/response.js"></script>
+    <script src="../js/eventListener.js"></script>
 </body>
 
 </html>
