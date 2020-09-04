@@ -6,7 +6,6 @@
     <meta charset = "utf-8">
     <link href="../css/style.css" rel="stylesheet" type="text/css">
 </head>
-
 <body>
     <div id="heading">
         <a href=""><img alt="经脉" src="../images/logo.png"></a>
@@ -47,327 +46,387 @@
                 <td class="hoverPropKey"></td>
                 <td class="hoverPropValue"></td>
             </tr>
-            <tr>
-                <td class="hoverPropKey"></td>
-                <td class="hoverPropValue"></td>
-            </tr>
-            <tr>
-                <td class="hoverPropKey"></td>
-                <td class="hoverPropValue"></td>
-            </tr>
-
-
         </table>
     </div>
     <div id="contentOfInput">
         <span class="titleStyle">经脉选择</span>
-        <div class="jingMaiBox">
-            <div class="checkboxAndSelect">
-                <input id="kunLun" name="jingMai" type="checkbox" >
-                <label class="jingMaiName" for="kunLun" id="kunLunLabel"  onmouseout="mOut(this)" onmouseover="mOver(this)">正脉·昆仑</label>
-                <select id="kunLunSelect">
-                    <option value ="216">216</option>
-                    <option value ="180">180</option>
-                </select>
+        <iframe name="hidden" ></iframe>
+        <form target="hidden">
+            <div class="jingMaiBox" id="kunLunBox">
+                <div class="checkboxAndSelect">
+                    <input id="kunLun" name="jingMai" onclick="checkBox(this)" type="checkbox">
+                    <label class="jingMaiName" for="kunLun" id="kunLunLabel"  onmouseout="mOut(this)" onmouseover="mOver(this)">正修·昆仑</label>
+                    <select id="kunLunSelect">
+                        <option value ="216">216</option>
+                        <option value ="180">180</option>
+                    </select>
+                </div>
+                <div class="checkboxAndSelect"></div>
+                <div class="qiZhengBox">
+                    <span class="zhengJingQizhen">气血奇珍:</span>
+                    <input id="kunLunQiXue" max="1800"  min="0" type="number" value="0">
+                </div>
             </div>
-            <div class="checkboxAndSelect">
 
+            <div class="jingMaiBox">
+                <div class="checkboxAndSelect">
+                    <input id="eMei" name="jingMai" onclick="checkBox(this)" type="checkbox">
+                    <label class="jingMaiName" for="eMei" id="eMeiLabel"  onmouseout="mOut(this)" onmouseover="mOver(this)">正修·峨眉</label>
+                    <select id="eMeiSelect">
+                        <option value ="216">216</option>
+                        <option value ="180">180</option>
+                    </select>
+                </div>
+                <div class="checkboxAndSelect">
+                    <input id="shenShui" name="jingMai" onclick="checkBox(this)" type="checkbox">
+                    <label class= "jingMaiName" for="shenShui" id="shenShuiLabel"  onmouseout="mOut(this)" onmouseover="mOver(this)">逆炼·神水</label>
+                    <select id="shenShuiSelect">
+                        <option value ="216">216</option>
+                        <option value ="180">180</option>
+                    </select>
+                </div>
+                <div class="qiZhengBox">
+                    <span class="zhengJingQizhen">内力奇珍:</span>
+                    <input id="eMeiNeiLi" max="1200"  min="0" type="number" value="0">
+                </div>
             </div>
-            <span class="zhengJingQizhen">气血奇珍:</span>
-                <input id="kunLunQiXue" max="180"  min="0" type="text" value="0">
-        </div>
 
-        <div class="jingMaiBox">
-            <div class="checkboxAndSelect">
-                <input id="eMei" name="jingMai" type="checkbox">
-                <label class="jingMaiName" for="eMei" >正脉·峨眉</label>
-                <select>
-                    <option value ="216">216</option>
-                    <option value ="180">180</option>
-                </select>
+            <div class="jingMaiBox">
+                <div class="checkboxAndSelect">
+                    <input id="jiLe" name="jingMai" onclick="checkBox(this)" type="checkbox">
+                    <label class="jingMaiName" for="jiLe" id="jiLeLabel"  onmouseout="mOut(this)" onmouseover="mOver(this)">正修·极乐</label>
+                    <select id="jiLeSelect">
+                        <option value ="216">216</option>
+                        <option value ="180">180</option>
+                    </select>
+                </div>
+                <div class="checkboxAndSelect">
+                    <input id="wuXian" name="jingMai" onclick="checkBox(this)" type="checkbox">
+                    <label  class= "jingMaiName" for="wuXian" id="wuXianLabel"  onmouseout="mOut(this)" onmouseover="mOver(this)">逆炼·五仙</label>
+                    <select id="wuXianSelect">
+                        <option value ="216">216</option>
+                        <option value ="180">180</option>
+                    </select>
+                </div>
+                <div class="qiZhengBox">
+                    <span class="zhengJingQizhen">罡气奇珍:</span>
+                    <input id="jiLeGangQi" max="180"  min="0" type="number" value="0">
+                </div>
             </div>
-            <div class="checkboxAndSelect">
-                <input id="shenShui" name="jingMai" type="checkbox">
-                <label class= "jingMaiName" for="shenShui">逆脉·神水</label>
-                <select>
-                    <option value ="216">216</option>
-                    <option value ="180">180</option>
-                </select>
-            </div>
-            <span class="zhengJingQizhen">内力奇珍:</span>
-            <input id="eMeiNeiLi" max="1200"  min="0" type="text" value="0">
-        </div>
 
-        <div class="jingMaiBox">
-            <div class="checkboxAndSelect">
-            <input id="jiLe" name="jingMai" type="checkbox">
-            <label class="jingMaiName" for="jiLe">正脉·极乐</label>
-            <select>
-                <option value ="216">216</option>
-                <option value ="180">180</option>
-            </select>
+            <div class="jingMaiBox">
+                <div class="checkboxAndSelect">
+                    <input id="gaiBang" name="jingMai" onclick="checkBox(this)" type="checkbox">
+                    <label class="jingMaiName" for="gaiBang" id="gaiBangLabel"  onmouseout="mOut(this)" onmouseover="mOver(this)">正修·丐帮</label>
+                    <select id="gaiBangSelect">
+                        <option value ="216">216</option>
+                        <option value ="180">180</option>
+                    </select>
+                </div>
+                <div class="checkboxAndSelect">
+                    <input id="changFeng" name="jingMai" onclick="checkBox(this)" type="checkbox">
+                    <label  class= "jingMaiName" for="changFeng" id="changFengLabel"  onmouseout="mOut(this)" onmouseover="mOver(this)">逆炼·长风</label>
+                    <select id="changFengSelect">
+                        <option value ="216">216</option>
+                        <option value ="180">180</option>
+                    </select>
+                </div>
+                <div class="qiZhengBox">
+                    <span class="zhengJingQizhen">体魄奇珍:</span>
+                    <input id="gaiBangTiPo" max="180"  min="0" type="number" value="0">
+                </div>
             </div>
-            <div class="checkboxAndSelect">
-                <input id="wuXian" name="jingMai" type="checkbox">
-                <label  class= "jingMaiName" for="wuXian">逆脉·五仙</label>
-                <select>
-                    <option value ="216">216</option>
-                    <option value ="180">180</option>
-                </select>
-            </div>
-            <span class="zhengJingQizhen">罡气奇珍:</span>
-            <input id="jiLeGangQi" max="180"  min="0" type="text" value="0">
-        </div>
 
-        <div class="jingMaiBox">
-            <div class="checkboxAndSelect">
-                <input id="gaiBang" name="jingMai" type="checkbox">
-                <label class="jingMaiName" for="gaiBang">正脉·丐帮</label>
-                <select>
-                    <option value ="216">216</option>
-                    <option value ="180">180</option>
-                </select>
+            <div class="jingMaiBox">
+                <div class="checkboxAndSelect">
+                    <input id="wuDang" name="jingMai" onclick="checkBox(this)" type="checkbox">
+                    <label class="jingMaiName" for="wuDang" id="wuDangLabel"  onmouseout="mOut(this)" onmouseover="mOver(this)">正修·武当</label>
+                    <select id="wuDangSelect">
+                        <option value ="216">216</option>
+                        <option value ="180">180</option>
+                    </select>
+                </div>
+                <div class="checkboxAndSelect">
+                    <input id="guMu" name="jingMai" onclick="checkBox(this)" type="checkbox">
+                    <label  class= "jingMaiName" for="guMu" id="guMuLabel"  onmouseout="mOut(this)" onmouseover="mOver(this)">逆炼·古墓</label>
+                    <select id="guMuSelect">
+                        <option value ="216">216</option>
+                        <option value ="180">180</option>
+                    </select>
+                </div>
+                <div class="qiZhengBox">
+                    <span class="zhengJingQizhen">内力奇珍:</span>
+                    <input id="wuDangNeiLi" max="1200"  min="0" type="number" value="0">
+                </div>
             </div>
-            <div class="checkboxAndSelect">
-                <input id="changFeng" name="jingMai" type="checkbox">
-                <label  class= "jingMaiName" for="changFeng">逆脉·长风</label>
-                <select>
-                    <option value ="216">216</option>
-                    <option value ="180">180</option>
-                </select>
-            </div>
-            <span class="zhengJingQizhen">体魄奇珍:</span>
-            <input id="gaiBangTiPo" max="180"  min="0" type="text" value="0">
-        </div>
 
-        <div class="jingMaiBox">
-            <div class="checkboxAndSelect">
-                <input id="wuDang" name="jingMai" type="checkbox">
-                <label class="jingMaiName" for="wuDang">正脉·武当</label>
-                <select>
-                    <option value ="216">216</option>
-                    <option value ="180">180</option>
-                </select>
+            <div class="jingMaiBox">
+                <div class="checkboxAndSelect">
+                    <input id="junZi" name="jingMai" onclick="checkBox(this)" type="checkbox">
+                    <label class="jingMaiName" for="junZi" id="junZiLabel"  onmouseout="mOut(this)" onmouseover="mOver(this)">正修·君子</label>
+                    <select id="junZiSelect">
+                        <option value ="216">216</option>
+                        <option value ="180">180</option>
+                    </select>
+                </div>
+                <div class="checkboxAndSelect">
+                    <input id="huaShan" name="jingMai" onclick="checkBox(this)" type="checkbox">
+                    <label  class= "jingMaiName" for="huaShan" id="huaShanLabel"  onmouseout="mOut(this)" onmouseover="mOver(this)">逆炼·华山</label>
+                    <select id="huaShanSelect">
+                        <option value ="216">216</option>
+                        <option value ="180">180</option>
+                    </select>
+                </div>
+                <div class="qiZhengBox">
+                    <span class="zhengJingQizhen">内息奇珍:</span>
+                    <input id="junZiNeiXi" max="180"  min="0" type="number" value="0">
+                </div>
             </div>
-            <div class="checkboxAndSelect">
-                <input id="guMu" name="jingMai" type="checkbox">
-                <label  class= "jingMaiName" for="guMu">逆脉·古墓</label>
-                <select>
-                    <option value ="216">216</option>
-                    <option value ="180">180</option>
-                </select>
-            </div>
-            <span class="zhengJingQizhen">内力奇珍:</span>
-            <input id="wuDangNeiLi" max="1200"  min="0" type="text" value="0">
-        </div>
 
-        <div class="jingMaiBox">
-            <div class="checkboxAndSelect">
-                <input id="junZi" name="jingMai" type="checkbox">
-                <label class="jingMaiName" for="junZi">正脉·君子</label>
-                <select>
-                    <option value ="216">216</option>
-                    <option value ="180">180</option>
-                </select>
+            <div class="jingMaiBox">
+                <div class="checkboxAndSelect">
+                    <input id="tangMen" name="jingMai" onclick="checkBox(this)" type="checkbox">
+                    <label class="jingMaiName" for="tangMen" id="tangMenLabel"  onmouseout="mOut(this)" onmouseover="mOver(this)">正修·唐门</label>
+                    <select id="tangMenSelect">
+                        <option value ="216">216</option>
+                        <option value ="180">180</option>
+                    </select>
+                </div>
+                <div class="checkboxAndSelect">
+                    <input id="nianLuo" name="jingMai" onclick="checkBox(this)" type="checkbox">
+                    <label  class= "jingMaiName" for="nianLuo" id="nianLuoLabel"  onmouseout="mOut(this)" onmouseover="mOver(this)">逆炼·念萝</label>
+                    <select id="nianLuoSelect">
+                        <option value ="216">216</option>
+                        <option value ="180">180</option>
+                    </select>
+                </div>
+                <div class="qiZhengBox">
+                    <span class="zhengJingQizhen">身法奇珍:</span>
+                    <input id="tangMenShenFa" max="180"  min="0" type="number" value="0">
+                </div>
             </div>
-            <div class="checkboxAndSelect">
-                <input id="huaShan" name="jingMai" type="checkbox">
-                <label  class= "jingMaiName" for="huaShan">逆脉·华山</label>
-                <select>
-                    <option value ="216">216</option>
-                    <option value ="180">180</option>
-                </select>
-            </div>
-            <span class="zhengJingQizhen">内息奇珍:</span>
-            <input id="junZiNeiXi" max="180"  min="0" type="text" value="0">
-        </div>
 
-        <div class="jingMaiBox">
-            <div class="checkboxAndSelect">
-                <input id="tangMen" name="jingMai" type="checkbox">
-                <label class="jingMaiName" for="tangMen">正脉·唐门</label>
-                <select>
-                    <option value ="216">216</option>
-                    <option value ="180">180</option>
-                </select>
+            <div class="jingMaiBox">
+                <div class="checkboxAndSelect">
+                    <input id="jinYi" name="jingMai" onclick="checkBox(this)" type="checkbox">
+                    <label class="jingMaiName" for="jinYi" id="jinYiLabel"  onmouseout="mOut(this)" onmouseover="mOver(this)">正修·锦衣</label>
+                    <select id="jinYiSelect">
+                        <option value ="216">216</option>
+                        <option value ="180">180</option>
+                    </select>
+                </div>
+                <div class="checkboxAndSelect">
+                    <input id="xueDao" name="jingMai" onclick="checkBox(this)" type="checkbox">
+                    <label  class= "jingMaiName" for="xueDao" id="xueDaoLabel"  onmouseout="mOut(this)" onmouseover="mOver(this)">逆炼·血刀</label>
+                    <select id="xueDaoSelect">
+                        <option value ="216">216</option>
+                        <option value ="180">180</option>
+                    </select>
+                </div>
+                <div class="qiZhengBox">
+                    <span class="zhengJingQizhen">臂力奇珍:</span>
+                    <input id="jinYiBiLi" max="180"  min="0" type="number" value="0">
+                </div>
             </div>
-            <div class="checkboxAndSelect">
-                <input id="nianLuo" name="jingMai" type="checkbox">
-                <label  class= "jingMaiName" for="nianLuo">逆脉·念萝</label>
-                <select>
-                    <option value ="216">216</option>
-                    <option value ="180">180</option>
-                </select>
-            </div>
-            <span class="zhengJingQizhen">身法奇珍:</span>
-            <input id="tangMenShenFa" max="180"  min="0" type="text" value="0">
-        </div>
 
-        <div class="jingMaiBox">
-            <div class="checkboxAndSelect">
-                <input id="jinYi" name="jingMai" type="checkbox">
-                <label class="jingMaiName" for="jinYi">正脉·锦衣</label>
-                <select>
-                    <option value ="216">216</option>
-                    <option value ="180">180</option>
-                </select>
+            <div class="jingMaiBox">
+                <div class="checkboxAndSelect">
+                    <input id="shaoLin" name="jingMai" onclick="checkBox(this)" type="checkbox">
+                    <label class="jingMaiName" for="shaoLin" id="shaoLinLabel"  onmouseout="mOut(this)" onmouseover="mOver(this)">正修·少林</label>
+                    <select id="shaoLinSelect">
+                        <option value ="216">216</option>
+                        <option value ="180">180</option>
+                    </select>
+                </div>
+                <div class="checkboxAndSelect">
+                    <input id="daMo" name="jingMai" onclick="checkBox(this)" type="checkbox">
+                    <label  class= "jingMaiName" for="daMo" id="daMoLabel"  onmouseout="mOut(this)" onmouseover="mOver(this)">逆炼·达摩</label>
+                    <select id="daMoSelect">
+                        <option value ="216">216</option>
+                        <option value ="180">180</option>
+                    </select>
+                </div>
+                <div class="qiZhengBox">
+                    <span class="zhengJingQizhen">气血奇珍:</span>
+                    <input id="shaoLinQiXue" max="1800"  min="0" type="number" value="0">
+                </div>
             </div>
-            <div class="checkboxAndSelect">
-                <input id="xueDao" name="jingMai" type="checkbox">
-                <label  class= "jingMaiName" for="xueDao">逆脉·血刀</label>
-                <select>
-                    <option value ="216">216</option>
-                    <option value ="180">180</option>
-                </select>
-            </div>
-            <span class="zhengJingQizhen">臂力奇珍:</span>
-            <input id="jinYiBiLi" max="180"  min="0" type="text" value="0">
-        </div>
 
-        <div class="jingMaiBox">
-            <div class="checkboxAndSelect">
-                <input id="shaoLin" name="jingMai" type="checkbox">
-                <label class="jingMaiName" for="shaoLin">正脉·少林</label>
-                <select>
-                    <option value ="216">216</option>
-                    <option value ="180">180</option>
-                </select>
+            <div class="jingMaiBox">
+                <div class="checkboxAndSelect">
+                    <input id="mingJiao" name="jingMai" onclick="checkBox(this)" type="checkbox">
+                    <label class="jingMaiName" for="mingJiao" id="mingJiaoLabel"  onmouseout="mOut(this)" onmouseover="mOver(this)">正修·明教</label>
+                    <select id="mingJiaoSelect">
+                        <option value ="216">216</option>
+                        <option value ="180">180</option>
+                    </select>
+                </div>
+                <div class="checkboxAndSelect">
+                    <input id="shenJi" name="jingMai" onclick="checkBox(this)" type="checkbox">
+                    <label  class= "jingMaiName" for="shenJi" id="shenJiLabel"  onmouseout="mOut(this)" onmouseover="mOver(this)">逆炼·神机</label>
+                    <select id="shenJiSelect">
+                        <option value ="216">216</option>
+                        <option value ="180">180</option>
+                    </select>
+                </div>
+                <div class="qiZhengBox">
+                    <span class="zhengJingQizhen">气血奇珍:</span>
+                    <input id="mingJiaonQiXue" max="1800"  min="0" type="number" value="0">
+                </div>
             </div>
-            <div class="checkboxAndSelect">
-                <input id="daMo" name="jingMai" type="checkbox">
-                <label  class= "jingMaiName" for="daMo">逆脉·达摩</label>
-                <select>
-                    <option value ="216">216</option>
-                    <option value ="180">180</option>
-                </select>
-            </div>
-            <span class="zhengJingQizhen">气血奇珍:</span>
-            <input id="shaoLinQiXue" max="1800"  min="0" type="text" value="0">
-        </div>
 
-        <div class="jingMaiBox">
-            <div class="checkboxAndSelect">
-                <input id="mingJiao" name="jingMai" type="checkbox">
-                <label class="jingMaiName" for="mingJiao">正脉·明教</label>
-                <select>
-                    <option value ="216">216</option>
-                    <option value ="180">180</option>
-                </select>
+            <div class="jingMaiBox">
+                <div class="checkboxAndSelect">
+                    <input id="tianShan" name="jingMai" onclick="checkBox(this)" type="checkbox">
+                    <label class="jingMaiName" for="tianShan" id="tianShanLabel"  onmouseout="mOut(this)" onmouseover="mOver(this)">正修·天山</label>
+                    <select id="tianShanSelect">
+                        <option value ="216">216</option>
+                        <option value ="180">180</option>
+                    </select>
+                </div>
+                <div class="checkboxAndSelect">
+                    <input id="xingMiao" name="jingMai" onclick="checkBox(this)" type="checkbox">
+                    <label  class= "jingMaiName" for="xingMiao" id="xingMiaoLabel"  onmouseout="mOut(this)" onmouseover="mOver(this)">逆炼·星渺</label>
+                    <select id="xingMiaoSelect">
+                        <option value ="216">216</option>
+                        <option value ="180">180</option>
+                    </select>
+                </div>
+                <div class="qiZhengBox">
+                    <span class="zhengJingQizhen">罡气奇珍:</span>
+                    <input id="tianShanGangQi" max="180"  min="0" type="number" value="0">
+                </div>
             </div>
-            <div class="checkboxAndSelect">
-                <input id="shenJi" name="jingMai" type="checkbox">
-                <label  class= "jingMaiName" for="shenJi">逆脉·神机</label>
-                <select>
-                    <option value ="216">216</option>
-                    <option value ="180">180</option>
-                </select>
-            </div>
-            <span class="zhengJingQizhen">气血奇珍:</span>
-            <input id="mingJiaonQiXue" max="1800"  min="0" type="text" value="0">
-        </div>
 
-        <div class="jingMaiBox">
-            <div class="checkboxAndSelect">
-                <input id="tianShan" name="jingMai" type="checkbox">
-                <label class="jingMaiName" for="tianShan">正脉·天山</label>
-                <select>
-                    <option value ="216">216</option>
-                    <option value ="180">180</option>
-                </select>
+                <div class="jingMaiBox"  id="yinQiaoMaiBox">
+                <div class="checkboxAndSelect">
+                    <input id="yinQiaoMai" name="jingMai" onclick="checkBox(this)" type="checkbox">
+                    <label class="jingMaiName" for="yinQiaoMai" id="yinQiaoMaiLabel"  onmouseout="mOut(this)" onmouseover="mOver(this)">阴跷脉</label>
+                    <select id="yinQiaoMaiSelect">
+                        <option value ="225">225</option>
+                        <option value ="180">180</option>
+                    </select>
+                </div>
+                <div class="fuJiaBox">
+                    <div class="fuJiaPropBox">
+                        <span class="fuJiaProp">跷脉·威力:</span>
+                        <input id="yinQiaoMaiWeiLi" min="0"  type="number"  value="0">
+                    </div>
+                    <div class="fuJiaPropBox">
+                        <span class="fuJiaProp">跷脉·气血:</span>
+                        <input id="yinQiaoMaiQiXue" min="0"  type="number"  value="0">
+                    </div>
+                </div>
+                <div class="qiZhengBox">
+                    <div class="qiZhengPropBox">
+                        <span class="qiJingQiZheng">奇珍·封劲:</span>
+                        <input id="yinQiaoMaiQiZhenFengJin" max="300"  min="0" type="number" value="0">
+                    </div>
+                    <div class="qiZhengPropBox">
+                        <span class="qiJingQiZheng">奇珍·气血:</span>
+                        <input id="yinQiaoMaiQiZhenQiXue" max="2400"  min="0" type="number" value="0">
+                    </div>
+                </div>
             </div>
-            <div class="checkboxAndSelect">
-                <input id="xingMiao" name="jingMai" type="checkbox">
-                <label  class= "jingMaiName" for="xingMiao">逆脉·星渺</label>
-                <select>
-                    <option value ="216">216</option>
-                    <option value ="180">180</option>
-                </select>
-            </div>
-            <span class="zhengJingQizhen">罡气奇珍:</span>
-            <input id="tianShanGangQi" max="180"  min="0" type="text" value="0">
-        </div>
 
-        <div class="jingMaiBox" id="yinQiaoMaiYinBox">
-            <div class="checkboxAndSelect">
-                <input id="yinQiaoMaiYin" name="jingMai" type="checkbox">
-                <label class="jingMaiName" for="yinQiaoMaiYin">阴跷脉·隐</label>
-                <select>
-                    <option value ="180">180</option>
-                </select>
+            <div class="jingMaiBox">
+                <div class="checkboxAndSelect">
+                    <input id="yangQiaoMai" name="jingMai" onclick="checkBox(this)" type="checkbox">
+                    <label class="jingMaiName" for="yangQiaoMai" id="yangQiaoMaiLabel"  onmouseout="mOut(this)" onmouseover="mOver(this)">阳跷脉</label>
+                    <select id="yangQiaoMaiSelect">
+                        <option value ="225">225</option>
+                        <option value ="180">180</option>
+                    </select>
+                </div>
+                <div class="fuJiaBox">
+                    <div class="fuJiaPropBox">
+                        <span class="fuJiaProp">跷脉·威力:</span>
+                        <input id="yangQiaoMaiWeiLi" min="0"  type="number"  value="0">
+                    </div>
+                    <div class="fuJiaPropBox">
+                        <span class="fuJiaProp">跷脉·气血:</span>
+                        <input id="yangQiaoMaiQiXue" min="0"  type="number"  value="0">
+                    </div>
+                </div>
+                <div class="qiZhengBox">
+                    <div class="qiZhengPropBox">
+                        <span class="qiJingQiZheng">奇珍·封劲:</span>
+                        <input id="yangQiaoMaiQiZhenFengJin" max="300"  min="0" type="number" value="0">
+                    </div>
+                    <div class="qiZhengPropBox">
+                        <span class="qiJingQiZheng">奇珍·气血:</span>
+                        <input id="yangQiaoMaiQiZhenQiXue" max="2400"  min="0" type="number" value="0">
+                    </div>
+                </div>
             </div>
-            <div class="checkboxAndSelect">
-                <span class="WeiLi">威力:</span>
-                <input id="yinQiaoMaiYinFengWeili" min="0"  type="text"  value="0">
-                <div class="spaceOfAfterWeili"></div>
-                <span class="qiJingFengJin">奇珍·封劲:</span>
-                <input id="yinQiaoMaiYinFengJin" max="180"  min="0" type="text" value="0">
-            </div>
-            <span class="qiJingQiXue">奇珍·气血:</span>
-            <input id="yinQiaoMaiYinQiXue" max="180"  min="0" type="text" value="0">
-        </div>
 
-        <div class="jingMaiBox">
-            <div class="checkboxAndSelect">
-                <input id="yangQiaoMaiYin" name="jingMai" type="checkbox">
-                <label class="jingMaiName" for="yangQiaoMaiYin">阳跷脉·隐</label>
-                <select>
-                    <option value ="180">180</option>
-                </select>
+            <div class="jingMaiBox">
+                <div class="checkboxAndSelect">
+                    <input id="yinQiaoMaiYin" name="jingMai" onclick="checkBox(this)" type="checkbox">
+                    <label class="jingMaiName" for="yinQiaoMaiYin" id="yinQiaoMaiYinLabel"  onmouseout="mOut(this)" onmouseover="mOver(this)">阴跷脉·隐</label>
+                    <select id="yinQiaoMaiYinSelect">
+                        <option value ="180">180</option>
+                    </select>
+                </div>
+                <div class="fuJiaBox">
+                    <div class="fuJiaPropBox">
+                        <span class="fuJiaProp">隐脉·威力:</span>
+                        <input id="yinQiaoMaiYinWeiLi" min="0"  type="number"  value="0">
+                    </div>
+                    <div class="fuJiaPropBox">
+                        <span class="fuJiaProp">隐脉·气血:</span>
+                        <input id="yinQiaoMaiYinQiXue" min="0"  type="number"  value="0">
+                    </div>
+                </div>
+                <div class="qiZhengBox">
+                    <div class="qiZhengPropBox">
+                        <span class="qiJingQiZheng">奇珍·封劲:</span>
+                        <input id="yinQiaoMaiYinQiZhenFengJin" max="150"  min="0" type="number" value="0">
+                    </div>
+                    <div class="qiZhengPropBox">
+                        <span class="qiJingQiZheng">奇珍·气血:</span>
+                        <input id="yinQiaoMaiYinQiZhenQiXue" max="1200"  min="0" type="number" value="0">
+                    </div>
+                </div>
             </div>
-            <div class="checkboxAndSelect">
-                <span class="WeiLi">威力:</span>
-                <input id="yangQiaoMaiYinFengWeili" min="0"  type="text"  value="0">
-                <div class="spaceOfAfterWeili"></div>
-                <span class="qiJingFengJin">奇珍·封劲:</span>
-                <input id="yangQiaoMaiYinFengJin" max="180"  min="0" type="text" value="0">
-            </div>
-            <span class="qiJingQiXue">奇珍·气血:</span>
-            <input id="yangQiaoMaiYinQiXue" max="180"  min="0" type="text" value="0">
-        </div>
 
-        <div class="jingMaiBox">
-            <div class="checkboxAndSelect">
-                <input id="yinQiaoMai" name="jingMai" type="checkbox">
-                <label class="jingMaiName" for="yinQiaoMai">阴跷脉</label>
-                <select>
-                    <option value ="225">225</option>
-                    <option value ="180">180</option>
-                </select>
+            <div class="jingMaiBox">
+                <div class="checkboxAndSelect">
+                    <input id="yangQiaoMaiYin" name="jingMai" onclick="checkBox(this)" type="checkbox">
+                    <label class="jingMaiName" for="yangQiaoMaiYin" id="yangQiaoMaiYinLabel"  onmouseout="mOut(this)" onmouseover="mOver(this)">阳跷脉·隐</label>
+                    <select id="yangQiaoMaiYinSelect">
+                        <option value ="180">180</option>
+                    </select>
+                </div>
+                <div class="fuJiaBox">
+                    <div class="fuJiaPropBox">
+                        <span class="fuJiaProp">隐脉·威力:</span>
+                        <input id="yangQiaoMaiYinWeiLi" min="0"  type="number"  value="0">
+                    </div>
+                    <div class="fuJiaPropBox">
+                        <span class="fuJiaProp">隐脉·气血:</span>
+                        <input id="yangQiaoMaiYinQiXue" min="0"  type="number"  value="0">
+                    </div>
+                </div>
+                <div class="qiZhengBox">
+                    <div class="qiZhengPropBox">
+                        <span class="qiJingQiZheng">奇珍·封劲:</span>
+                        <input id="yangQiaoMaiYinQiZhenFengJin" max="150"  min="0" type="number" value="0">
+                    </div>
+                    <div class="qiZhengPropBox">
+                        <span class="qiJingQiZheng">奇珍·气血:</span>
+                        <input id="yangQiaoMaiYinQiZhenQiXue" max="1200"  min="0" type="number" value="0">
+                    </div>
+                </div>
             </div>
-            <div class="checkboxAndSelect">
-                <span class="WeiLi">威力:</span>
-                <input id="yinQiaoMaiFengWeili" min="0"  type="text"  value="0">
-                <div class="spaceOfAfterWeili"></div>
-                <span class="qiJingFengJin">奇珍·封劲:</span>
-                <input id="yinQiaoMaiFengJin" max="180"  min="0" type="text" value="0">
-            </div>
-            <span class="qiJingQiXue">奇珍·气血:</span>
-            <input id="yinQiaoMaiQiXue" max="180"  min="0" type="text" value="0">
-        </div>
 
-        <div class="jingMaiBox">
-            <div class="checkboxAndSelect">
-                <input id="yangQiaoMai" name="jingMai" type="checkbox">
-                <label class="jingMaiName" for="yangQiaoMai">阳跷脉</label>
-                <select>
-                    <option value ="225">225</option>
-                    <option value ="180">180</option>
-                </select>
-            </div>
-            <div class="checkboxAndSelect">
-                <span class="WeiLi">威力:</span>
-                <input id="yangQiaoMaiFengWeili" min="0"  type="text"  value="0">
-                <div class="spaceOfAfterWeili"></div>
-                <span class="qiJingFengJin">奇珍·封劲:</span>
-                <input id="yangQiaoMaiFengJin" max="180"  min="0" type="text" value="0">
-            </div>
-            <span class="qiJingQiXue">奇珍·气血:</span>
-            <input id="yangQiaoMaiQiXue" max="180"  min="0" type="text" value="0">
-        </div>
-
-        <span id="countTxt">开启经脉数量 :</span>
-        <span id="count">0</span>
-        <button onclick="myFunction()" type="button">确定</button>
+            <span class="countTxt" id="countTxt1">已经激活了</span>
+            <span class="countNum" id="count">0</span>
+            <span class="countTxt">条，最多可激活</span>
+            <span class="countNum">8</span>
+            <span class="countTxt">条</span>
+            <input  type="submit" value="确定">
+        </form>
     </div>
     <div id="contentOfMid">
     <img alt="图片加载失败" src="../images/mid.png">
@@ -445,7 +504,7 @@
                 <td class="propValue"></td>
                 <td>忽视内功化解</td>
                 <td class="propValue"></td>
-                <td>内功化解(%)</td>
+                <td>内功化解</td>
                 <td class="propValue"></td>
             </tr>
             <tr>
@@ -489,9 +548,9 @@
                 <td class="propValue"></td>
             </tr>
             <tr>
-                <td>&nbsp;</td>
+                <td> </td>
                 <td class="propValue"></td>
-                <td>&nbsp;</td>
+                <td> </td>
                 <td class="propValue"></td>
                 <td>&nbsp;</td>
                 <td class="propValue"></td>
@@ -500,7 +559,6 @@
             </tr>
         </table>
     </div>
-
     <footer>
         <span id="copyleft">Copyleft 2020 Maintained by</span>
         <a href="https://tieba.baidu.com/home/main?id=tb.1.ddff996a.awKMp5i3KpxvkrT86-BB6Q&fr=userbar" id="developerLink" target="_blank">拖延癌晚期</a>

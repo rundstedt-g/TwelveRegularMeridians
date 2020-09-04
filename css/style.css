@@ -50,6 +50,10 @@ footer{
     margin-left: 30px;
 }
 
+iframe{
+    display: none;
+}
+
 .titleStyle{
     font-family:STXingkai,"Microsoft Yahei","MicrosoftJhengHei", STHeiti ,sans-serif;
     color: white;
@@ -59,14 +63,18 @@ footer{
 }
 
 .jingMaiBox {
-    margin-top: 7px;
+    padding: 0;
+    margin-top: 3px;
     margin-left: 30px;
     display: block;
+}
+#kunLunBox{
+    margin-top: 7px;
 }
 
 .checkboxAndSelect{
     vertical-align: top;
-    width:38.5%;
+    width:35%;
     display: inline-block;
 }
 
@@ -112,43 +120,60 @@ footer{
     color: yellow;
 }
 
+#yinQiaoMaiBox{
+    margin-top: 15px;
+}
+.fuJiaBox{
+    margin: 0;
+    padding: 0;
+    width:35%;
+    display: inline-block;
+}
+.fuJiaPropBox{
+    display: block;
+}
+.fuJiaProp{
+    display: inline-block;
+    color: orange;
+}
+.fuJiaBox input[type="number"]{
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    width: 22.85714285714286%;
+}
+
+.qiZhengBox{
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    width: 25%;
+}
+.qiZhengPropBox{
+    display: block;
+}
 .zhengJingQizhen{
-    width: 13%;
+    margin: 0;
+    padding: 0;
+    width: 52%;
     color: orange;
+    display: inline-block;
+}
+.qiJingQiZheng{
+    margin: 0;
+    padding: 0;
+    width: 52%;
+    color: orange;
+    display: inline-block;
+}
+.qiZhengBox input[type="number"]{
+    margin: 0;
+    padding: 0;
+    width: 32%;
     display: inline-block;
 }
 
-.jingMaiBox input[type="text"]{
-    width: 5%;
-    display: inline-block;
-}
-.checkboxAndSelect input[type="text"]{
-    display: inline-block;
-    width: 12.98701298701299%;
-}
-
-#yinQiaoMaiYinBox{
-    margin-top: 20px;
-}
-.spaceOfAfterWeili{
-    width: 7%;
-    display: inline-block;
-}
-.WeiLi{
-    display: inline-block;
-    color: orange;
-}
-.qiJingFengJin{
-    display: inline-block;
-    color: orange;
-}
-.qiJingQiXue{
-    width: 13%;
-    display: inline-block;
-    color: orange;
-}
-
-button{
+input[type="submit"]{
     background: #eb94d0;
     /* 创建渐变 */
     background-image: -webkit-linear-gradient(top, #eb94d0, #2079b0);
@@ -172,9 +197,8 @@ button{
     text-decoration: none;  /*设置无文本装饰*/
 
     padding: 0; /*内边距*/
-    margin-right: 2.5%;
+    margin-right: 7%;
     margin-top: 15px;
-    margin-bottom: 20px;
 
     width: 100px;
     height: 40px;
@@ -185,7 +209,7 @@ button{
 }
 
 /* button悬停样式 */
-button:hover {
+input[type="submit"]:hover {
     background: #2079b0;
     background-image: -webkit-linear-gradient(top, #2079b0, #eb94d0);
     background-image: -moz-linear-gradient(top, #2079b0, #eb94d0);
@@ -195,16 +219,17 @@ button:hover {
     text-decoration: none;
 }
 
-#countTxt{
+.countTxt{
     display: inline-block;
-    margin-top: 30px;
-    margin-left: 32px;
-    color: fuchsia;
+    margin-top: 30px;color: fuchsia;
 }
+#countTxt1{
+    margin-left: 32px;
 
-#count{
+}
+.countNum{
     margin-top: 30px;
-    color: fuchsia;
+    color: springgreen;
 }
 
 #contentOfMid img{
@@ -223,7 +248,7 @@ table,th,td{
 }
 
 #contentOfOutput td{
-    height: 35px;
+    height: 36.5px;
     color: white;
 }
 
@@ -241,14 +266,18 @@ table,th,td{
     position: absolute;
     z-index: 2;
     width: 15%;
+    height: 38%;
+    border-style: double;
+    border-color: #333;
+    border-width: 2px;
     background-color: rgba(0, 0, 0, 0.9);
 }
 #hoverProp td{
     height: 20px;
-    color: #fafafa;
+    color: #eeeeee;
 }
 #hoverTable{
-    margin-bottom: 10px;
+   border-color: #eeeeee;
 }
 #hoverPropJingMaiName{
     display: block;
