@@ -146,7 +146,7 @@ function checkBox(obj){
     if(n>8){
         obj.checked = false;
         n--;
-        alert("最多可激活8条");
+        alert("经脉激活已达上限!");
     }
     else if(obj.id == "yinQiaoMai" || obj.id == "yangQiaoMai"){
         if(obj.id == "yinQiaoMai" && document.getElementById('yinQiaoMaiYin').checked == true ){
@@ -213,8 +213,10 @@ var propList = {
     gangFangYu: 0,
     neiGongFangYu: 0
 }
-
-function sum(){
+function sumProp(){
+    for(var i in propList){
+        propList[i] = 0;
+    }
     var objs = document.getElementsByName("jingMai");
     var objsSelect = [];
     var selectedSet = [];
@@ -231,6 +233,7 @@ function sum(){
         name += level;
         selectedSet.push(propData[name]);
     }
+
     for(var i=0; i<selectedSet.length; i++){
         for(var j in selectedSet[i]){
             if(j=="name" || j=="level"){
@@ -238,15 +241,114 @@ function sum(){
             }
             if(j=="neiLiFuJia"){
                 propList["neiLi"] += selectedSet[i][j];
+                continue;
             }
             if(j=="qiXueFuJia"){
                 propList["qiXue"] += selectedSet[i][j];
+                continue;
             }
             propList[j] += selectedSet[i][j];
         }
     }
+    var activate = {
+        kunLun : false,
+        eMei : false,
+        jiLe : false,
+        gaiBang : false,
+        wuDang : false,
+        junZi : false,
+        tangMen : false,
+        jinYi : false,
+        shaoLin : false,
+        mingJiao : false,
+        tianShan : false
+    }
+    for(var i=0; i<objsSelect.length; i++){
+        var idTmp = objsSelect[i].id;
+        var qiZhenValue = 0;
+        if(idTmp.length < 10){
+            if(idTmp=="kunLun"){
+                qiZhenValue = parseInt(document.getElementById("kunLunQiXue").value);
+                propList["qiXue"] += qiZhenValue;
+            }
+            else if((idTmp=="eMei" || idTmp=="shenShui") && activate["eMei"]==false){
+                qiZhenValue = parseInt(document.getElementById("eMeiNeiLi").value);
+                propList["neiLi"] += qiZhenValue;
+                activate["eMei"] = true;
+            }
+            else if((idTmp=="jiLe" || idTmp=="wuXian") && activate["jiLe"]==false){
+                qiZhenValue = parseInt(document.getElementById("jiLeGangQi").value);
+                propList["gangQi"] += qiZhenValue;
+                activate["jiLe"] = true;
+            }
+            else if((idTmp=="gaiBang" || idTmp=="changFeng") && activate["gaiBang"]==false){
+                qiZhenValue = parseInt(document.getElementById("gaiBangTiPo").value);
+                propList["tiPo"] += qiZhenValue;
+                activate["gaiBang"] = true;
+            }
+            else if((idTmp=="wuDang" || idTmp=="guMu") && activate["wuDang"]==false){
+                qiZhenValue = parseInt(document.getElementById("wuDangNeiLi").value);
+                propList["neiLi"] += qiZhenValue;
+                activate["wuDang"] = true;
+            }
+            else if((idTmp=="junZi" || idTmp=="huaShan") && activate["junZi"]==false){
+                qiZhenValue = parseInt(document.getElementById("junZiNeiXi").value);
+                propList["neiXi"] += qiZhenValue;
+                activate["junZi"] = true;
+            }
+            else if((idTmp=="tangMen" || idTmp=="nianLuo") && activate["tangMen"]==false){
+                qiZhenValue = parseInt(document.getElementById("tangMenShenFan").value);
+                propList["shenFa"] += qiZhenValue;
+                activate["tangMen"] = true;
+            }
+            else if((idTmp=="jinYi" || idTmp=="xueDao") && activate["jinYi"]==false){
+                qiZhenValue = parseInt(document.getElementById("jinYiBiLi").value);
+                propList["biLi"] += qiZhenValue;
+                activate["jinYi"] = true;
+            }
+            else if((idTmp=="shaoLin" || idTmp=="daMo") && activate["shaoLin"]==false){
+                qiZhenValue = parseInt(document.getElementById("shaoLinQiXue").value);
+                propList["qiXue"] += qiZhenValue;
+                activate["shaoLin"] = true;
+            }
+            else if((idTmp=="mingJiao" || idTmp=="shenJi") && activate["mingJiao"]==false){
+                qiZhenValue = parseInt(document.getElementById("mingJiaoQiXue").value);
+                propList["qiXue"] += qiZhenValue;
+                activate["mingJiao"] = true;
+            }
+            else if((idTmp=="tianShan" || idTmp=="xingMiao") && activate["tianShan"]==false){
+                qiZhenValue = parseInt(document.getElementById("tianShanGangQi").value);
+                propList["gangQi"] += qiZhenValue;
+                activate["tianShan"] = true;
+            }
+        }
+        else{
+            var addWeiLi = parseInt(document.getElementById(idTmp+"WeiLi").value);
+            propList["yuanChengWeiLi"] += addWeiLi;
+            propList["jinShenWeiLi"] += addWeiLi;
+            propList["neiGongWeiLi"] += addWeiLi;
 
-}
-function sumJingMai(){
+            var addQiXue = parseInt(document.getElementById(idTmp+"QiXue").value);
+            propList["qiXue"] += addQiXue;
 
+            var qiZhenFengJin = parseInt(document.getElementById(idTmp+"QiZhenFengJin").value);
+            propList["fengJin"] += qiZhenFengJin;
+
+            var qiZhenQiXue = parseInt(document.getElementById(idTmp+"QiZhenQiXue").value);
+            propList["qiXue"] += qiZhenQiXue;
+        }
+    }
+    printPropList();
 }
+function printPropList(){
+    var j = 0;
+    for(var i in propList){
+        if(propList[i] != 0){
+            document.getElementById("propValue"+j).innerHTML = propList[i];
+        }
+        j++;
+    }
+}
+/* 1.属性打印出来变色
+   2.表单内容验证失败不执行onclick
+ */

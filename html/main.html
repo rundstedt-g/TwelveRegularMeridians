@@ -271,7 +271,7 @@
                 </div>
                 <div class="qiZhengBox">
                     <span class="zhengJingQizhen">气血奇珍:</span>
-                    <input id="mingJiaonQiXue" max="1800"  min="0" type="number" value="0">
+                    <input id="mingJiaoQiXue" max="1800"  min="0" type="number" value="0">
                 </div>
             </div>
 
@@ -425,7 +425,7 @@
             <span class="countTxt">条，最多可激活</span>
             <span class="countNum">8</span>
             <span class="countTxt">条</span>
-            <input  type="submit" value="确定">
+            <input  type="submit" value="确定" onclick="sumProp()">
         </form>
     </div>
     <div id="contentOfMid">
@@ -436,126 +436,126 @@
         <table>
             <tr>
                 <td>臂力</td>
-                <td class="propValue"></td>
+                <td class="propValue" id="propValue0"></td>
                 <td class="spaces" rowspan="12"></td>
                 <td>近身威力</td>
-                <td class="propValue"></td>
+                <td class="propValue" id="propValue11"></td>
                 <td class="spaces" rowspan="12"></td>
                 <td>内功威力</td>
-                <td class="propValue"></td>
+                <td class="propValue" id="propValue17"></td>
                 <td class="spaces" rowspan="12"></td>
                 <td>躲闪值</td>
-                <td class="propValue"></td>
+                <td class="propValue" id="propValue24"></td>
             </tr>
             <tr>
                 <td>内息</td>
-                <td class="propValue"></td>
+                <td class="propValue" id="propValue1"></td>
                 <td>远程威力</td>
-                <td class="propValue"></td>
+                <td class="propValue" id="propValue12"></td>
                 <td>内功暴击值</td>
-                <td class="propValue"></td>
+                <td class="propValue" id="propValue18"></td>
                 <td>封劲</td>
-                <td class="propValue"></td>
+                <td class="propValue" id="propValue25"></td>
             </tr>
             <tr>
                 <td>罡气</td>
-                <td class="propValue"></td>
+                <td class="propValue" id="propValue2"></td>
                 <td>外功暴击值</td>
-                <td class="propValue"></td>
+                <td class="propValue" id="propValue13"></td>
                 <td>内功命中值</td>
-                <td class="propValue"></td>
+                <td class="propValue" id="propValue19"></td>
                 <td>招架耐力</td>
-                <td class="propValue"></td>
+                <td class="propValue" id="propValue26"></td>
             </tr>
             <tr>
                 <td>身法</td>
-                <td class="propValue"></td>
+                <td class="propValue" id="propValue3"></td>
                 <td>外功命中值</td>
-                <td class="propValue"></td>
+                <td class="propValue" id="propValue14"></td>
                 <td>内功暴击伤害(%)</td>
-                <td class="propValue"></td>
+                <td class="propValue" id="propValue20"></td>
                 <td>招架耐力回复</td>
-                <td class="propValue"></td>
+                <td class="propValue" id="propValue27"></td>
             </tr>
             <tr>
                 <td>体魄</td>
-                <td class="propValue"></td>
+                <td class="propValue" id="propValue4"></td>
                 <td>外功暴击伤害(%)</td>
-                <td class="propValue"></td>
+                <td class="propValue" id="propValue15"></td>
                 <td>内功命中率(%)</td>
-                <td class="propValue"></td>
+                <td class="propValue" id="propValue21"></td>
                 <td>受到暴击伤害降低(%)</td>
-                <td class="propValue"></td>
+                <td class="propValue" id="propValue28"></td>
             </tr>
             <tr>
                 <td>气血</td>
-                <td class="propValue"></td>
+                <td class="propValue" id="propValue5"></td>
                 <td>外功命中率(%)</td>
-                <td class="propValue"></td>
+                <td class="propValue" id="propValue16"></td>
                 <td>忽视内功防御</td>
-                <td class="propValue"></td>
+                <td class="propValue" id="propValue22"></td>
                 <td>被暴击几率降低(%)</td>
-                <td class="propValue"></td>
+                <td class="propValue" id="propValue29"></td>
             </tr>
             <tr>
                 <td>气血回复</td>
-                <td class="propValue"></td>
+                <td class="propValue" id="propValue6"></td>
                 <td>&nbsp;</td>
-                <td class="propValue"></td>
+                <td> </td>
                 <td>忽视内功化解</td>
-                <td class="propValue"></td>
+                <td class="propValue" id="propValue23"></td>
                 <td>内功化解</td>
-                <td class="propValue"></td>
+                <td class="propValue" id="propValue30"></td>
             </tr>
             <tr>
                 <td>气血回复间隔缩短(%)</td>
-                <td class="propValue"></td>
+                <td class="propValue" id="propValue7"></td>
                 <td>&nbsp;</td>
-                <td class="propValue"></td>
+                <td> </td>
                 <td>&nbsp;</td>
-                <td class="propValue"></td>
+                <td> </td>
                 <td>阴防御</td>
-                <td class="propValue"></td>
+                <td class="propValue" id="propValue31"></td>
             </tr>
             <tr>
                 <td>内力</td>
-                <td class="propValue"></td>
+                <td class="propValue" id="propValue8"></td>
                 <td>&nbsp;</td>
-                <td class="propValue"></td>
+                <td> </td>
                 <td>&nbsp;</td>
-                <td class="propValue"></td>
+                <td> </td>
                 <td>柔防御</td>
-                <td class="propValue"></td>
+                <td class="propValue" id="propValue32"></td>
             </tr>
             <tr>
                 <td>内力回复</td>
-                <td class="propValue"></td>
+                <td class="propValue" id="propValue9"></td>
                 <td>&nbsp;</td>
-                <td class="propValue"></td>
+                <td> </td>
                 <td>&nbsp;</td>
-                <td class="propValue"></td>
+                <td> </td>
                 <td>阳防御</td>
-                <td class="propValue"></td>
+                <td class="propValue" id="propValue33"></td>
             </tr>
             <tr>
                 <td>内力回复间隔缩短(%)</td>
-                <td class="propValue"></td>
+                <td class="propValue" id="propValue10"></td>
                 <td>&nbsp;</td>
-                <td class="propValue"></td>
+                <td> </td>
                 <td>&nbsp;</td>
-                <td class="propValue"></td>
+                <td> </td>
                 <td>刚防御</td>
-                <td class="propValue"></td>
+                <td class="propValue" id="propValue34"></td>
             </tr>
             <tr>
                 <td> </td>
-                <td class="propValue"></td>
                 <td> </td>
-                <td class="propValue"></td>
                 <td>&nbsp;</td>
-                <td class="propValue"></td>
+                <td> </td>
+                <td>&nbsp;</td>
+                <td> </td>
                 <td>内功防御</td>
-                <td class="propValue"></td>
+                <td class="propValue" id="propValue35"></td>
             </tr>
         </table>
     </div>
