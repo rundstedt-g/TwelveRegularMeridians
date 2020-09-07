@@ -213,132 +213,199 @@ var propList = {
     gangFangYu: 0,
     neiGongFangYu: 0
 }
-function sumProp(){
+function checkConstraint(){
+    var q = document.querySelectorAll("input[type=\"number\"]");
+    for(var i=0;i<q.length;i++){
+        if(q[i].checkValidity()==false){
+            return false;
+        }
+    }
+    return true;
+}
+
+function sumProp(buttonObj){
     for(var i in propList){
         propList[i] = 0;
     }
-    var objs = document.getElementsByName("jingMai");
-    var objsSelect = [];
-    var selectedSet = [];
-    for(var i=0; i<objs.length; i++) {
-        if(objs[i].checked){
-            objsSelect.push(objs[i]);
+    if(buttonObj.id === "resetObj"){
+        printPropList();
+    }
+    else{
+        if(checkConstraint()==false){
+            printPropList();
+            return false;
         }
-    }
-    for(var i=0; i<objsSelect.length; i++){
-        var name = objsSelect[i].id;
-        var selected = document.getElementById(name+"Select");
-        var index = selected.selectedIndex;
-        var level = selected[index].value;
-        name += level;
-        selectedSet.push(propData[name]);
-    }
-
-    for(var i=0; i<selectedSet.length; i++){
-        for(var j in selectedSet[i]){
-            if(j=="name" || j=="level"){
-                continue;
-            }
-            if(j=="neiLiFuJia"){
-                propList["neiLi"] += selectedSet[i][j];
-                continue;
-            }
-            if(j=="qiXueFuJia"){
-                propList["qiXue"] += selectedSet[i][j];
-                continue;
-            }
-            propList[j] += selectedSet[i][j];
-        }
-    }
-    var activate = {
-        kunLun : false,
-        eMei : false,
-        jiLe : false,
-        gaiBang : false,
-        wuDang : false,
-        junZi : false,
-        tangMen : false,
-        jinYi : false,
-        shaoLin : false,
-        mingJiao : false,
-        tianShan : false
-    }
-    for(var i=0; i<objsSelect.length; i++){
-        var idTmp = objsSelect[i].id;
-        var qiZhenValue = 0;
-        if(idTmp.length < 10){
-            if(idTmp=="kunLun"){
-                qiZhenValue = parseInt(document.getElementById("kunLunQiXue").value);
-                propList["qiXue"] += qiZhenValue;
-            }
-            else if((idTmp=="eMei" || idTmp=="shenShui") && activate["eMei"]==false){
-                qiZhenValue = parseInt(document.getElementById("eMeiNeiLi").value);
-                propList["neiLi"] += qiZhenValue;
-                activate["eMei"] = true;
-            }
-            else if((idTmp=="jiLe" || idTmp=="wuXian") && activate["jiLe"]==false){
-                qiZhenValue = parseInt(document.getElementById("jiLeGangQi").value);
-                propList["gangQi"] += qiZhenValue;
-                activate["jiLe"] = true;
-            }
-            else if((idTmp=="gaiBang" || idTmp=="changFeng") && activate["gaiBang"]==false){
-                qiZhenValue = parseInt(document.getElementById("gaiBangTiPo").value);
-                propList["tiPo"] += qiZhenValue;
-                activate["gaiBang"] = true;
-            }
-            else if((idTmp=="wuDang" || idTmp=="guMu") && activate["wuDang"]==false){
-                qiZhenValue = parseInt(document.getElementById("wuDangNeiLi").value);
-                propList["neiLi"] += qiZhenValue;
-                activate["wuDang"] = true;
-            }
-            else if((idTmp=="junZi" || idTmp=="huaShan") && activate["junZi"]==false){
-                qiZhenValue = parseInt(document.getElementById("junZiNeiXi").value);
-                propList["neiXi"] += qiZhenValue;
-                activate["junZi"] = true;
-            }
-            else if((idTmp=="tangMen" || idTmp=="nianLuo") && activate["tangMen"]==false){
-                qiZhenValue = parseInt(document.getElementById("tangMenShenFan").value);
-                propList["shenFa"] += qiZhenValue;
-                activate["tangMen"] = true;
-            }
-            else if((idTmp=="jinYi" || idTmp=="xueDao") && activate["jinYi"]==false){
-                qiZhenValue = parseInt(document.getElementById("jinYiBiLi").value);
-                propList["biLi"] += qiZhenValue;
-                activate["jinYi"] = true;
-            }
-            else if((idTmp=="shaoLin" || idTmp=="daMo") && activate["shaoLin"]==false){
-                qiZhenValue = parseInt(document.getElementById("shaoLinQiXue").value);
-                propList["qiXue"] += qiZhenValue;
-                activate["shaoLin"] = true;
-            }
-            else if((idTmp=="mingJiao" || idTmp=="shenJi") && activate["mingJiao"]==false){
-                qiZhenValue = parseInt(document.getElementById("mingJiaoQiXue").value);
-                propList["qiXue"] += qiZhenValue;
-                activate["mingJiao"] = true;
-            }
-            else if((idTmp=="tianShan" || idTmp=="xingMiao") && activate["tianShan"]==false){
-                qiZhenValue = parseInt(document.getElementById("tianShanGangQi").value);
-                propList["gangQi"] += qiZhenValue;
-                activate["tianShan"] = true;
+        var objs = document.getElementsByName("jingMai");
+        var objsSelect = [];
+        var selectedSet = [];
+        for(var i=0; i<objs.length; i++) {
+            if(objs[i].checked){
+                objsSelect.push(objs[i]);
             }
         }
-        else{
-            var addWeiLi = parseInt(document.getElementById(idTmp+"WeiLi").value);
-            propList["yuanChengWeiLi"] += addWeiLi;
-            propList["jinShenWeiLi"] += addWeiLi;
-            propList["neiGongWeiLi"] += addWeiLi;
-
-            var addQiXue = parseInt(document.getElementById(idTmp+"QiXue").value);
-            propList["qiXue"] += addQiXue;
-
-            var qiZhenFengJin = parseInt(document.getElementById(idTmp+"QiZhenFengJin").value);
-            propList["fengJin"] += qiZhenFengJin;
-
-            var qiZhenQiXue = parseInt(document.getElementById(idTmp+"QiZhenQiXue").value);
-            propList["qiXue"] += qiZhenQiXue;
+        for(var i=0; i<objsSelect.length; i++){
+            var name = objsSelect[i].id;
+            var selected = document.getElementById(name+"Select");
+            var index = selected.selectedIndex;
+            var level = selected[index].value;
+            name += level;
+            selectedSet.push(propData[name]);
         }
+
+        for(var i=0; i<selectedSet.length; i++){
+            for(var j in selectedSet[i]){
+                if(j=="name" || j=="level"){
+                    continue;
+                }
+                if(j=="neiLiFuJia"){
+                    propList["neiLi"] += selectedSet[i][j];
+                    continue;
+                }
+                if(j=="qiXueFuJia"){
+                    propList["qiXue"] += selectedSet[i][j];
+                    continue;
+                }
+                propList[j] += selectedSet[i][j];
+            }
+        }
+        var activate = {
+            kunLun : false,
+            eMei : false,
+            jiLe : false,
+            gaiBang : false,
+            wuDang : false,
+            junZi : false,
+            tangMen : false,
+            jinYi : false,
+            shaoLin : false,
+            mingJiao : false,
+            tianShan : false
+        }
+        for(var i=0; i<objsSelect.length; i++){
+            var idTmp = objsSelect[i].id;
+            var qiZhenValue = 0;
+            if(idTmp.length < 10){
+                if(idTmp=="kunLun"){
+                    qiZhenValue = parseInt(document.getElementById("kunLunQiXue").value);
+                    if(isNaN(qiZhenValue)){
+                        qiZhenValue=0;
+                    }
+                    propList["qiXue"] += qiZhenValue;
+                }
+                else if((idTmp=="eMei" || idTmp=="shenShui") && activate["eMei"]==false){
+                    qiZhenValue = parseInt(document.getElementById("eMeiNeiLi").value);
+                    if(isNaN(qiZhenValue)){
+                        qiZhenValue=0;
+                    }
+                    propList["neiLi"] += qiZhenValue;
+                    activate["eMei"] = true;
+                }
+                else if((idTmp=="jiLe" || idTmp=="wuXian") && activate["jiLe"]==false){
+                    qiZhenValue = parseInt(document.getElementById("jiLeGangQi").value);
+                    if(isNaN(qiZhenValue)){
+                        qiZhenValue=0;
+                    }
+                    propList["gangQi"] += qiZhenValue;
+                    activate["jiLe"] = true;
+                }
+                else if((idTmp=="gaiBang" || idTmp=="changFeng") && activate["gaiBang"]==false){
+                    qiZhenValue = parseInt(document.getElementById("gaiBangTiPo").value);
+                    if(isNaN(qiZhenValue)){
+                        qiZhenValue=0;
+                    }
+                    propList["tiPo"] += qiZhenValue;
+                    activate["gaiBang"] = true;
+                }
+                else if((idTmp=="wuDang" || idTmp=="guMu") && activate["wuDang"]==false){
+                    qiZhenValue = parseInt(document.getElementById("wuDangNeiLi").value);
+                    if(isNaN(qiZhenValue)){
+                        qiZhenValue=0;
+                    }
+                    propList["neiLi"] += qiZhenValue;
+                    activate["wuDang"] = true;
+                }
+                else if((idTmp=="junZi" || idTmp=="huaShan") && activate["junZi"]==false){
+                    qiZhenValue = parseInt(document.getElementById("junZiNeiXi").value);
+                    if(isNaN(qiZhenValue)){
+                        qiZhenValue=0;
+                    }
+                    propList["neiXi"] += qiZhenValue;
+                    activate["junZi"] = true;
+                }
+                else if((idTmp=="tangMen" || idTmp=="nianLuo") && activate["tangMen"]==false){
+                    qiZhenValue = parseInt(document.getElementById("tangMenShenFa").value);
+                    if(isNaN(qiZhenValue)){
+                        qiZhenValue=0;
+                    }
+                    propList["shenFa"] += qiZhenValue;
+                    activate["tangMen"] = true;
+                }
+                else if((idTmp=="jinYi" || idTmp=="xueDao") && activate["jinYi"]==false){
+                    qiZhenValue = parseInt(document.getElementById("jinYiBiLi").value);
+                    if(isNaN(qiZhenValue)){
+                        qiZhenValue=0;
+                    }
+                    propList["biLi"] += qiZhenValue;
+                    activate["jinYi"] = true;
+                }
+                else if((idTmp=="shaoLin" || idTmp=="daMo") && activate["shaoLin"]==false){
+                    qiZhenValue = parseInt(document.getElementById("shaoLinQiXue").value);
+                    if(isNaN(qiZhenValue)){
+                        qiZhenValue=0;
+                    }
+                    propList["qiXue"] += qiZhenValue;
+                    activate["shaoLin"] = true;
+                }
+                else if((idTmp=="mingJiao" || idTmp=="shenJi") && activate["mingJiao"]==false){
+                    qiZhenValue = parseInt(document.getElementById("mingJiaoQiXue").value);
+                    if(isNaN(qiZhenValue)){
+                        qiZhenValue=0;
+                    }
+                    propList["qiXue"] += qiZhenValue;
+                    activate["mingJiao"] = true;
+                }
+                else if((idTmp=="tianShan" || idTmp=="xingMiao") && activate["tianShan"]==false){
+                    qiZhenValue = parseInt(document.getElementById("tianShanGangQi").value);
+                    if(isNaN(qiZhenValue)){
+                        qiZhenValue=0;
+                    }
+                    if(isNaN(qiZhenValue)){
+                        qiZhenValue=0;
+                    }
+                    propList["gangQi"] += qiZhenValue;
+                    activate["tianShan"] = true;
+                }
+            }
+            else{
+                var addWeiLi = parseInt(document.getElementById(idTmp+"WeiLi").value);
+                if(isNaN(addWeiLi)){
+                    addWeiLi=0;
+                }
+                propList["yuanChengWeiLi"] += addWeiLi;
+                propList["jinShenWeiLi"] += addWeiLi;
+                propList["neiGongWeiLi"] += addWeiLi;
+
+                var addQiXue = parseInt(document.getElementById(idTmp+"QiXue").value);
+                if(isNaN(addQiXue)){
+                    addQiXue=0;
+                }
+                propList["qiXue"] += addQiXue;
+
+                var qiZhenFengJin = parseInt(document.getElementById(idTmp+"QiZhenFengJin").value);
+                if(isNaN(qiZhenFengJin)){
+                    qiZhenFengJin=0;
+                }
+                propList["fengJin"] += qiZhenFengJin;
+
+                var qiZhenQiXue = parseInt(document.getElementById(idTmp+"QiZhenQiXue").value);
+                if(isNaN(qiZhenQiXue)){
+                    qiZhenQiXue=0;
+                }
+                propList["qiXue"] += qiZhenQiXue;
+            }
+        }
+        printPropList();
     }
-    printPropList();
 }
 function printPropList(){
     var j = 0;
@@ -346,9 +413,9 @@ function printPropList(){
         if(propList[i] != 0){
             document.getElementById("propValue"+j).innerHTML = propList[i];
         }
+        else {
+            document.getElementById("propValue"+j).innerHTML ="";
+        }
         j++;
     }
 }
-/* 1.属性打印出来变色
-   2.表单内容验证失败不执行onclick
- */

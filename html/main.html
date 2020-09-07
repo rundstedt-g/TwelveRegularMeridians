@@ -9,6 +9,10 @@
 <body>
     <div id="heading">
         <a href=""><img alt="经脉" src="../images/logo.png"></a>
+        <a class="links" href="http://9yin.azurewebsites.net/" target="_blank">永乐大典</a>
+        <a class="links" href="https://9yin.woniu.com/wiki/" target="_blank">九阴维基</a>
+        <a class="links" href="https://9yin.woniu.com/main.html" target="_blank">九阴官网</a>
+
     </div>
     <div id="hoverProp">
         <span id="hoverPropJingMaiName"></span>
@@ -425,7 +429,8 @@
             <span class="countTxt">条，最多可激活</span>
             <span class="countNum">8</span>
             <span class="countTxt">条</span>
-            <input  type="submit" value="确定" onclick="sumProp()">
+            <input  id="submitObj" onclick="sumProp(this)" type="submit" value="确定">
+            <input  id="resetObj" onclick="sumProp(this)" type="reset" value="重置">
         </form>
     </div>
     <div id="contentOfMid">
@@ -435,7 +440,7 @@
         <span class="titleStyle">附加属性</span>
         <table>
             <tr>
-                <td>臂力</td>
+                <td class="propName">臂力</td>
                 <td class="propValue" id="propValue0"></td>
                 <td class="spaces" rowspan="12"></td>
                 <td>近身威力</td>
