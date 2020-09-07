@@ -53,12 +53,18 @@ footer{
     vertical-align: top;
     float: right;
     margin-top: 1%;
+    margin-left: 0px;
     margin-right: 1%;
+    padding-right: 1%;
+    border-right: 1px solid #e5e6e6;
     text-decoration:none;
     color: orange;
 }
 .links:hover{
     color: yellow;
+}
+#yldd{
+    border-right: none;
 }
 iframe{
     display: none;
