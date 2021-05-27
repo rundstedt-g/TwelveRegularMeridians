@@ -63,7 +63,7 @@ footer{
 .links:hover{
     color: yellow;
 }
-#yldd{
+#lastlink{
     border-right: none;
 }
 iframe{
@@ -293,7 +293,7 @@ table,th,td{
     color: #eeeeee;
 }
 #hoverTable{
-   border-color: #eeeeee;
+    border-color: #eeeeee;
 }
 #hoverPropJingMaiName{
     display: block;
@@ -306,4 +306,3 @@ table,th,td{
     margin-left: 10px;
     color: #2fdd33;
 }
-

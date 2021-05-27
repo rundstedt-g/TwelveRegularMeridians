@@ -22,6 +22,29 @@
     "neiLi": 246,
     "neiGongHuaJie": 7
   },
+  "tyhg216": {
+    "name":"手少阴心经·逆行",
+    "level": "216",
+    "neiGongBaoJiZhi": 103,
+    "waiGongBaoJiZhi": 103,
+    "neiGongFangYu": 173,
+    "duoShanZhi": 80,
+    "qiXue": 1800,
+    "neiLi": 380,
+    "huShiNeiGongHuaJie": 7,
+    "qiXueFuJia": 300
+  },
+  "tyhg180": {
+    "name":"手少阴心经·逆行",
+    "level": "180",
+    "neiGongBaoJiZhi": 87,
+    "waiGongBaoJiZhi": 87,
+    "neiGongFangYu": 145,
+    "duoShanZhi": 67,
+    "qiXue": 1515,
+    "neiLi": 320,
+    "huShiNeiGongHuaJie": 7
+  },
   "eMei216": {
     "name":"手太阴肺经",
     "level": "216",
@@ -535,10 +558,3 @@
     "neiLi": 362
   }
 }
-
-
-
-
-
-
-
