@@ -1,5 +1,5 @@
 function readData() { //加载json文件
-    var url = "../data/MeridiansProp.json"; /*json文件url，本地的就写本地的位置，如果是服务器的就写服务器的路径*/
+    var url = "data/MeridiansProp.json"; /*json文件url，本地的就写本地的位置，如果是服务器的就写服务器的路径*/
     var okStatus = document.location.protocol === "file:" ? 0 : 200;
     var xhr = new XMLHttpRequest();
     xhr.open("get", url,false); /*设置请求方法与路径*/
@@ -13,6 +13,7 @@ var jingMaiHoverProp = document.getElementById('hoverProp');
 var hoverTable = document.getElementById('hoverTable');
 var hoverName = document.getElementById('hoverPropJingMaiName');
 var hoverLevel = document.getElementById('hoverPropJingMaiLevel');
+
 function mOver(obj){
     var name = obj.id.slice(0,obj.id.length-5);
     var selected = document.getElementById(name+"Select");
@@ -24,9 +25,11 @@ function mOver(obj){
     jingMaiHoverProp.style.display = 'block';
 
 }
+
 function mOut(obj){
     jingMaiHoverProp.style.display = 'none';
 }
+
 function formatPrint(obj){
     var length = Object.getOwnPropertyNames(obj).length-2;
     var rowLength = hoverTable.rows.length;
@@ -35,14 +38,17 @@ function formatPrint(obj){
             var newtr=document.createElement("tr");
             var newtd1=document.createElement("td");
             var newtd2=document.createElement("td");
-            hoverTable.appendChild(newtr);
+
+            var tbody = hoverTable.lastElementChild;
+            tbody.appendChild(newtr);
             newtr.appendChild(newtd1);
             newtr.appendChild(newtd2);
-            rowLength++;
+            rowLength = hoverTable.rows.length;
         }
         else if(length < rowLength){
-            hoverTable.removeChild(hoverTable.lastElementChild);
-            rowLength--;
+            var tbody = hoverTable.lastElementChild;
+            tbody.removeChild(tbody.lastElementChild);
+            rowLength = hoverTable.rows.length;
         }
     }
     var j = 0;
@@ -60,6 +66,7 @@ function formatPrint(obj){
         j++;
     }
 }
+
 function charToChinese(str){
     var text = "";
     switch (str){
@@ -106,9 +113,11 @@ function charToChinese(str){
     }
     return text;
 }
+
 function setOffset(obj){
     var w = document.body.scrollWidth - (getPosition(obj).left + obj.scrollWidth + document.body.scrollWidth*0.38);
     var h = document.body.scrollHeight - (getPosition(obj).top + obj.scrollHeight + document.body.scrollHeight*0.38);
+
     if(w < 0){
         jingMaiHoverProp.style.left = getPosition(obj).left + obj.scrollWidth + w -5 + "px";
     }else {
@@ -118,9 +127,10 @@ function setOffset(obj){
     if(h < 0){
         jingMaiHoverProp.style.top = getPosition(obj).top + obj.scrollHeight + h - 5 + "px";
     }else{
-        jingMaiHoverProp.style.top = getPosition(obj).top + obj.scrollHeight + "px";
+        jingMaiHoverProp.style.top = getPosition(obj).top + obj.scrollHeight - 1 + "px";
     }
 }
+
 function getPosition(element){
     var dc = document,
         rec = element.getBoundingClientRect(),
@@ -213,6 +223,7 @@ var propList = {
     gangFangYu: 0,
     neiGongFangYu: 0
 }
+
 function checkConstraint(){
     var q = document.querySelectorAll("input[type=\"number\"]");
     for(var i=0;i<q.length;i++){
@@ -407,6 +418,7 @@ function sumProp(buttonObj){
         printPropList();
     }
 }
+
 function printPropList(){
     var j = 0;
     for(var i in propList){
